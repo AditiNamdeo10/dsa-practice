@@ -21,3 +21,7 @@ class Majority_element{
 
     }
 }
+
+//Output= 2
+//Time complexity= O(n+n)= O(2n)= O(n)  (for two loops)
+//Space complexity=O(n)
