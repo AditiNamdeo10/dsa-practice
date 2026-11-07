@@ -1,7 +1,7 @@
 import java.util.Stack;
 class Postfix_to_infix{
     public static String postfixToInfix(String s){
-        StringBuilder ans= new StringBuilder();
+        
         Stack<String> st= new Stack<>();
         for(int i=0;i<s.length();i++){
             char curr=s.charAt(i);
@@ -11,15 +11,15 @@ class Postfix_to_infix{
             }else{
                 String t1=st.pop();
                 String t2=st.pop();
-                StringBuilder sb= new StringBuilder();
-                sb.append('(').append(t2).append(curr).append(t1).append(')');
-                st.push(sb.toString());
+                // StringBuilder sb= new StringBuilder();
+                // sb.append('(').append(t2).append(curr).append(t1).append(')');
+                String s1='(' + t2 + curr + t1 + ')' ;
+                st.push(s1);
             }
         }
-        for(String c: st){
-            ans.append(c);
-        }
-        return String.valueOf(ans);
+        String ans=st.pop();
+        return ans;
+        
     }
     public static void main(String [] args){
         String s="AB-DE+F*/";
