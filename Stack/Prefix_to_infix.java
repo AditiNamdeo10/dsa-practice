@@ -1,12 +1,10 @@
 import java.util.Stack;
 class Prefix_to_infix{
-    public static String prefixToInfix(String s1){
-        StringBuilder sb = new StringBuilder(s1);
-        String s=sb.reverse().toString();
-
+    public static String prefixToInfix(String s){
+        
         Stack<String> st =new Stack<>();
 
-        for(int i=0;i<s.length();i++){
+        for(int i=s.length()-1;i>=0;i--){
             char curr=s.charAt(i);
             if((curr>='A' && curr<='Z') || (curr>='a' && curr<='z') ||
             curr>='0' && curr<='9'){
